@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Blog Intro Writer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>✍️ AI Blog Intro Writer</h1>
+    <p>Enter a topic for your blog post, select a model, and let the AI generate an engaging introduction!</p>
+
+    <label for="topic">Blog Post Topic:</label>
+    <input type="text" id="topic" placeholder="e.g., The Future of Renewable Energy">
+
+    <label for="model_name">Select Model:</label>
+    <select id="model_name">
+      <option value="llama3">Llama 3 (Recommended)</option>
+      <option value="mistral">Mistral</option>
+      <option value="phi3">Phi-3</option>
+      <option value="gemma">Gemma</option>
+      <option value="codellama">CodeLlama</option>
+      <option value="tinyllama">TinyLlama</option>
+      <option value="custom">Custom (Enter Below)</option>
+    </select>
+    <input type="text" id="custom_model_name" placeholder="Enter custom model name (e.g., my-custom-model:latest)"
+      style="display: none;">
+
+    <button id="generateBtn">Generate Intro</button>
+
+    <div id="loading" style="display: none;">
+      <p>Generating... please wait.</p>
+      <div class="loader"></div>
+    </div>
+
+    <div id="result" style="display: none;">
+      <h2>Generated Introduction:</h2>
+      <textarea id="output" readonly rows="10"></textarea>
+    </div>
+
+    <div id="error" class="error-message" style="display: none;">
+      <p><strong>Error:</strong> <span id="errorMessage"></span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
